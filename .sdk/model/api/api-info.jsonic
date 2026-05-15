@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://github.com/l0v3m0n3y/europaplus"
+      }
+      description: "The Europaplus API is a JavaScript library designed to interact with the Europaplus radio service in Russia. It allows developers to access various functionalities such as retrieving schedules and other data associated with the radio service."
+      servers: [
+        {
+          description: "Europaplus Radio Service"
+          url: "https://www.europaplus.ru"
+        }
+      ]
+      title: "Europaplus API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

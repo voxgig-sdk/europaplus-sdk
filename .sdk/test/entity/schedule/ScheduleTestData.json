@@ -1,0 +1,34 @@
+{
+  "existing": {
+    "schedule": {
+      "SCHEDULE00": {
+        "description": "s28",
+        "host": "s29",
+        "program": "s2a",
+        "time": "s2b"
+      },
+      "SCHEDULE01": {
+        "description": "s50",
+        "host": "s51",
+        "program": "s52",
+        "time": "s53"
+      },
+      "SCHEDULE02": {
+        "description": "s78",
+        "host": "s79",
+        "program": "s7a",
+        "time": "s7b"
+      }
+    }
+  },
+  "new": {
+    "schedule": {
+      "schedule_ref01": {
+        "description": "sa0",
+        "host": "sa1",
+        "program": "sa2",
+        "time": "sa3"
+      }
+    }
+  }
+}

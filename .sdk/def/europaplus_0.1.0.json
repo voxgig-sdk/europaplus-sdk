@@ -1,0 +1,114 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Europaplus API",
+    "description": "The Europaplus API is a JavaScript library designed to interact with the Europaplus radio service in Russia. It allows developers to access various functionalities such as retrieving schedules and other data associated with the radio service.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/l0v3m0n3y/europaplus"
+    }
+  },
+  "externalDocs": {
+    "description": "GitHub Repository",
+    "url": "https://github.com/l0v3m0n3y/europaplus"
+  },
+  "servers": [
+    {
+      "url": "https://www.europaplus.ru",
+      "description": "Europaplus Radio Service"
+    }
+  ],
+  "paths": {
+    "/schedule": {
+      "get": {
+        "summary": "Get Schedule",
+        "description": "Retrieves the current schedule information from the Europaplus radio service",
+        "operationId": "getSchedule",
+        "tags": [
+          "Schedule"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response containing schedule data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "schedule": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "time": {
+                            "type": "string",
+                            "description": "Time of the scheduled program"
+                          },
+                          "program": {
+                            "type": "string",
+                            "description": "Name of the program"
+                          },
+                          "host": {
+                            "type": "string",
+                            "description": "Host or DJ name"
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "Program description"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Schedule",
+      "description": "Operations related to retrieving schedule information from Europaplus radio"
+    }
+  ]
+}
