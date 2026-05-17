@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/europaplus-sdk"
-	"github.com/voxgig-sdk/europaplus-sdk/core"
+	sdk "github.com/voxgig-sdk/europaplus-sdk/go"
+	"github.com/voxgig-sdk/europaplus-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/europaplus-sdk/go/utility/struct"
 )
 
 func TestScheduleEntity(t *testing.T) {

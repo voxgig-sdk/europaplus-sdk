@@ -1,10 +1,10 @@
 package voxgigeuropaplussdk
 
 import (
-	"github.com/voxgig-sdk/europaplus-sdk/core"
-	"github.com/voxgig-sdk/europaplus-sdk/entity"
-	"github.com/voxgig-sdk/europaplus-sdk/feature"
-	_ "github.com/voxgig-sdk/europaplus-sdk/utility"
+	"github.com/voxgig-sdk/europaplus-sdk/go/core"
+	"github.com/voxgig-sdk/europaplus-sdk/go/entity"
+	"github.com/voxgig-sdk/europaplus-sdk/go/feature"
+	_ "github.com/voxgig-sdk/europaplus-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

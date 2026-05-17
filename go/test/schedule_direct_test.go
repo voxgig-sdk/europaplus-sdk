@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/europaplus-sdk"
-	"github.com/voxgig-sdk/europaplus-sdk/core"
+	sdk "github.com/voxgig-sdk/europaplus-sdk/go"
+	"github.com/voxgig-sdk/europaplus-sdk/go/core"
 )
 
 func TestScheduleDirect(t *testing.T) {

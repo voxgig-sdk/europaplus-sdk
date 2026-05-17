@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/europaplus-sdk/core"
+import "github.com/voxgig-sdk/europaplus-sdk/go/core"
 
 func init() {
 	core.UtilityRegistrar = registerAll
