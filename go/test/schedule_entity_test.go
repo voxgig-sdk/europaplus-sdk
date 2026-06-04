@@ -119,7 +119,6 @@ func scheduleBasicSetup(extra map[string]any) *entityTestSetup {
 		"EUROPAPLUS_TEST_SCHEDULE_ENTID": idmap,
 		"EUROPAPLUS_TEST_LIVE":      "FALSE",
 		"EUROPAPLUS_TEST_EXPLAIN":   "FALSE",
-		"EUROPAPLUS_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["EUROPAPLUS_TEST_SCHEDULE_ENTID"])
@@ -130,7 +129,6 @@ func scheduleBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["EUROPAPLUS_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["EUROPAPLUS_APIKEY"],
 			},
 			extra,
 		})

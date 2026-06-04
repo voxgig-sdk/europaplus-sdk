@@ -16,8 +16,21 @@ main: {
       ]
       title: "Europaplus API"
       version: "1.0.0"
+      tagline: "Unofficial access to Europa Plus, a major Russian commercial radio station, including schedule and search data"
+      homepage: "https://www.europaplus.ru"
+      docs_url: "https://freepublicapis.com/europaplus-api"
+      about_md: `[Europa Plus](https://www.europaplus.ru) (Европа Плюс) is one of the largest commercial radio networks in Russia, broadcasting popular music, charts, and on-air shows such as Бригада У and ЕвроХит Топ 40. The website at \`www.europaplus.ru\` exposes a handful of JSON endpoints that power its own pages.
+
+This SDK wraps the public, unauthenticated endpoints reachable on the radio station's site. Typical use cases include:
+
+- Looking up scheduled programmes and on-air content
+- Issuing search hints against the station's catalogue (e.g. \`GET /api/search/hint?query=...\`)
+
+This is an unofficial integration. The endpoints are undocumented and may change without notice, and CORS is not enabled, so calls generally need to be made from a server-side environment.`
+      entity_desc: {
+        schedule: "Programme schedule / on-air listings for the Europa Plus radio station, exposed under the site's `/api/` namespace."
+      }
+      auth: false
     }
   }
-}
-
 }

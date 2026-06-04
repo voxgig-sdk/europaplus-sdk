@@ -68,14 +68,12 @@ function schedule_direct_setup($mockres)
     $env = Runner::env_override([
         "EUROPAPLUS_TEST_SCHEDULE_ENTID" => [],
         "EUROPAPLUS_TEST_LIVE" => "FALSE",
-        "EUROPAPLUS_APIKEY" => "NONE",
     ]);
 
     $live = $env["EUROPAPLUS_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["EUROPAPLUS_APIKEY"],
         ];
         $client = new EuropaplusSDK($merged_opts);
         return [

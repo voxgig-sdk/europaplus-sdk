@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'EUROPAPLUS_TEST_SCHEDULE_ENTID': {},
     'EUROPAPLUS_TEST_LIVE': 'FALSE',
-    'EUROPAPLUS_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.EUROPAPLUS_TEST_LIVE
 
   if (live) {
     const client = new EuropaplusSDK({
-      apikey: env.EUROPAPLUS_APIKEY,
     })
 
     let idmap: any = env['EUROPAPLUS_TEST_SCHEDULE_ENTID']

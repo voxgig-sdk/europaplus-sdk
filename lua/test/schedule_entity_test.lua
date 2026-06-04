@@ -92,7 +92,6 @@ function schedule_basic_setup(extra)
     ["EUROPAPLUS_TEST_SCHEDULE_ENTID"] = idmap,
     ["EUROPAPLUS_TEST_LIVE"] = "FALSE",
     ["EUROPAPLUS_TEST_EXPLAIN"] = "FALSE",
-    ["EUROPAPLUS_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -104,7 +103,6 @@ function schedule_basic_setup(extra)
   if env["EUROPAPLUS_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["EUROPAPLUS_APIKEY"],
       },
       extra or {},
     })

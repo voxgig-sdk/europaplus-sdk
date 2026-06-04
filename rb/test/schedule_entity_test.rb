@@ -83,7 +83,6 @@ def schedule_basic_setup(extra)
     "EUROPAPLUS_TEST_SCHEDULE_ENTID" => idmap,
     "EUROPAPLUS_TEST_LIVE" => "FALSE",
     "EUROPAPLUS_TEST_EXPLAIN" => "FALSE",
-    "EUROPAPLUS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +94,6 @@ def schedule_basic_setup(extra)
   if env["EUROPAPLUS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["EUROPAPLUS_APIKEY"],
       },
       extra || {},
     ])
