@@ -93,12 +93,14 @@ func scheduleDirectSetup(mockres any) *scheduleDirectSetupResult {
 	env := envOverride(map[string]any{
 		"EUROPAPLUS_TEST_SCHEDULE_ENTID": map[string]any{},
 		"EUROPAPLUS_TEST_LIVE":    "FALSE",
+		"EUROPAPLUS_APIKEY":       "NONE",
 	})
 
 	live := env["EUROPAPLUS_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["EUROPAPLUS_APIKEY"],
 		}
 		client := sdk.NewEuropaplusSDK(mergedOpts)
 

@@ -63,12 +63,14 @@ function schedule_direct_setup(mockres)
   local env = runner.env_override({
     ["EUROPAPLUS_TEST_SCHEDULE_ENTID"] = {},
     ["EUROPAPLUS_TEST_LIVE"] = "FALSE",
+    ["EUROPAPLUS_APIKEY"] = "NONE",
   })
 
   local live = env["EUROPAPLUS_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["EUROPAPLUS_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

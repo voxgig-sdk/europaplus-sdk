@@ -1,19 +1,8 @@
 # Europaplus SDK
 
-Unofficial access to Europa Plus, a major Russian commercial radio station, including schedule and search data
+Europaplus API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Europaplus API
-
-[Europa Plus](https://www.europaplus.ru) (Европа Плюс) is one of the largest commercial radio networks in Russia, broadcasting popular music, charts, and on-air shows such as Бригада У and ЕвроХит Топ 40. The website at `www.europaplus.ru` exposes a handful of JSON endpoints that power its own pages.
-
-This SDK wraps the public, unauthenticated endpoints reachable on the radio station's site. Typical use cases include:
-
-- Looking up scheduled programmes and on-air content
-- Issuing search hints against the station's catalogue (e.g. `GET /api/search/hint?query=...`)
-
-This is an unofficial integration. The endpoints are undocumented and may change without notice, and CORS is not enabled, so calls generally need to be made from a server-side environment.
 
 ## Try it
 
@@ -47,29 +36,31 @@ gem install europaplus-sdk
 luarocks install europaplus-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { EuropaplusSDK } from 'europaplus'
 
-const client = new EuropaplusSDK({})
+const client = new EuropaplusSDK({
+  apikey: process.env.EUROPAPLUS_APIKEY,
+})
 
 // List all schedules
 const schedules = await client.Schedule().list()
+console.log(schedules.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -99,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Schedule** | Programme schedule / on-air listings for the Europa Plus radio station, exposed under the site's `/api/` namespace. | `/schedule` |
+| **Schedule** |  | `/schedule` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -109,12 +100,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from europaplus_sdk import EuropaplusSDK
 
-client = EuropaplusSDK({})
+client = EuropaplusSDK({
+    "apikey": os.environ.get("EUROPAPLUS_APIKEY"),
+})
 
 # List all schedules
-schedules, err = client.Schedule(None).list(None, None)
+schedules, err = client.Schedule().list()
+print(schedules)
 ```
 
 ### PHP
@@ -123,10 +118,13 @@ schedules, err = client.Schedule(None).list(None, None)
 <?php
 require_once 'europaplus_sdk.php';
 
-$client = new EuropaplusSDK([]);
+$client = new EuropaplusSDK([
+    "apikey" => getenv("EUROPAPLUS_APIKEY"),
+]);
 
 // List all schedules
-[$schedules, $err] = $client->Schedule(null)->list(null, null);
+[$schedules, $err] = $client->Schedule()->list();
+print_r($schedules);
 ```
 
 ### Golang
@@ -134,10 +132,13 @@ $client = new EuropaplusSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/europaplus-sdk/go"
 
-client := sdk.NewEuropaplusSDK(map[string]any{})
+client := sdk.NewEuropaplusSDK(map[string]any{
+    "apikey": os.Getenv("EUROPAPLUS_APIKEY"),
+})
 
 // List all schedules
 schedules, err := client.Schedule(nil).List(nil, nil)
+fmt.Println(schedules)
 ```
 
 ### Ruby
@@ -145,10 +146,13 @@ schedules, err := client.Schedule(nil).List(nil, nil)
 ```ruby
 require_relative "Europaplus_sdk"
 
-client = EuropaplusSDK.new({})
+client = EuropaplusSDK.new({
+  "apikey" => ENV["EUROPAPLUS_APIKEY"],
+})
 
 # List all schedules
-schedules, err = client.Schedule(nil).list(nil, nil)
+schedules, err = client.Schedule().list
+puts schedules
 ```
 
 ### Lua
@@ -156,10 +160,13 @@ schedules, err = client.Schedule(nil).list(nil, nil)
 ```lua
 local sdk = require("europaplus_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("EUROPAPLUS_APIKEY"),
+})
 
 -- List all schedules
-local schedules, err = client:Schedule(nil):list(nil, nil)
+local schedules, err = client:Schedule():list()
+print(schedules)
 ```
 
 ## Unit testing in offline mode
@@ -178,25 +185,21 @@ const result = await client.Schedule().load({ id: 'test01' })
 ### Python
 
 ```python
-client = EuropaplusSDK.test(None, None)
-result, err = client.Schedule(None).load(
-    {"id": "test01"}, None
-)
+client = EuropaplusSDK.test()
+result, err = client.Schedule().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = EuropaplusSDK::test(null, null);
-[$result, $err] = $client->Schedule(null)->load(
-    ["id" => "test01"], null
-);
+$client = EuropaplusSDK::test();
+[$result, $err] = $client->Schedule()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Schedule(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -205,19 +208,15 @@ result, err := client.Schedule(nil).Load(
 ### Ruby
 
 ```ruby
-client = EuropaplusSDK.test(nil, nil)
-result, err = client.Schedule(nil).load(
-  { "id" => "test01" }, nil
-)
+client = EuropaplusSDK.test
+result, err = client.Schedule().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Schedule(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Schedule():load({ id = "test01" })
 ```
 
 ## How it works
@@ -321,11 +320,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Europaplus API
-
-- Upstream: [https://www.europaplus.ru](https://www.europaplus.ru)
-- API docs: [https://freepublicapis.com/europaplus-api](https://freepublicapis.com/europaplus-api)
 
 ---
 

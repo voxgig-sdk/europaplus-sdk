@@ -1,6 +1,11 @@
 # Europaplus PHP SDK
 
-The PHP SDK for the Europaplus API. Provides an entity-oriented interface using PHP conventions.
+
+
+The PHP SDK for the Europaplus API — an entity-oriented client using PHP conventions.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -20,13 +25,15 @@ loading a specific record.
 <?php
 require_once 'europaplus_sdk.php';
 
-$client = new EuropaplusSDK([]);
+$client = new EuropaplusSDK([
+    "apikey" => getenv("EUROPAPLUS_APIKEY"),
+]);
 ```
 
 ### 2. List schedules
 
 ```php
-[$result, $err] = $client->Schedule(null)->list(null, null);
+[$result, $err] = $client->Schedule()->list();
 if ($err) { throw new \Exception($err); }
 
 if (is_array($result)) {
@@ -78,11 +85,9 @@ print_r($fetchdef["headers"]);
 Create a mock client for unit testing — no server required:
 
 ```php
-$client = EuropaplusSDK::test(null, null);
+$client = EuropaplusSDK::test();
 
-[$result, $err] = $client->Europaplus(null)->load(
-    ["id" => "test01"], null
-);
+[$result, $err] = $client->Europaplus()->load(["id" => "test01"]);
 // $result contains mock response data
 ```
 
@@ -117,6 +122,7 @@ Create a `.env.local` file at the project root:
 
 ```
 EUROPAPLUS_TEST_LIVE=TRUE
+EUROPAPLUS_APIKEY=<your-key>
 ```
 
 Then run:
@@ -139,6 +145,7 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |

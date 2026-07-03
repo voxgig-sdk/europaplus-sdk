@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'EUROPAPLUS_TEST_SCHEDULE_ENTID': idmap,
     'EUROPAPLUS_TEST_LIVE': 'FALSE',
     'EUROPAPLUS_TEST_EXPLAIN': 'FALSE',
+    'EUROPAPLUS_APIKEY': 'NONE',
   })
 
   idmap = env['EUROPAPLUS_TEST_SCHEDULE_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new EuropaplusSDK(merge([
       {
+        apikey: env.EUROPAPLUS_APIKEY,
       },
       extra
     ]))
