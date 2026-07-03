@@ -10,7 +10,7 @@ The PHP SDK for the Europaplus API — an entity-oriented client using PHP conve
 
 ## Install
 ```bash
-composer require voxgig/europaplus-sdk
+composer require voxgig-sdk/europaplus
 ```
 
 

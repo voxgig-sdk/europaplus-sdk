@@ -10,7 +10,7 @@ The Python SDK for the Europaplus API — an entity-oriented client following Py
 
 ## Install
 ```bash
-pip install europaplus-sdk
+pip install voxgig-sdk-europaplus
 ```
 
 Or install from source:

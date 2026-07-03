@@ -10,7 +10,7 @@ The TypeScript SDK for the Europaplus API — a type-safe, entity-oriented clien
 
 ## Install
 ```bash
-npm install europaplus
+npm install @voxgig-sdk/europaplus
 ```
 ## Tutorial: your first API call
 

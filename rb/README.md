@@ -10,13 +10,13 @@ The Ruby SDK for the Europaplus API — an entity-oriented client using idiomati
 
 ## Install
 ```bash
-gem install europaplus-sdk
+gem install voxgig-sdk-europaplus
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "europaplus-sdk"
+gem "voxgig-sdk-europaplus"
 ```
 
 Then run:
