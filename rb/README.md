@@ -28,16 +28,14 @@ require_relative "Europaplus_sdk"
 client = EuropaplusSDK.new
 ```
 
-### 2. List schedules
+### 2. List schedule records
 
 ```ruby
 begin
-  result = client.schedule.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Schedule records — iterate directly.
+  schedules = client.Schedule.list
+  schedules.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = EuropaplusSDK.test
+client = EuropaplusSDK.test({
+  "entity" => { "schedule" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.schedule.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+schedule = client.Schedule.load({ "id" => "test01" })
+puts schedule
 ```
 
 ### Use a custom fetch function
@@ -226,7 +228,7 @@ API path: `/schedule`
 
 ### Schedule
 
-Create an instance: `const schedule = client.schedule`
+Create an instance: `schedule = client.Schedule`
 
 #### Operations
 
@@ -245,8 +247,9 @@ Create an instance: `const schedule = client.schedule`
 
 #### Example: List
 
-```ts
-const schedules = await client.schedule.list()
+```ruby
+# list returns an Array of Schedule records (raises on error).
+schedules = client.Schedule.list
 ```
 
 
@@ -321,7 +324,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-schedule = client.schedule
+schedule = client.Schedule
 schedule.load({ "id" => "example_id" })
 
 # schedule.data_get now returns the loaded schedule data

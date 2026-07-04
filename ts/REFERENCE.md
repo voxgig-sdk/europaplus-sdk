@@ -109,7 +109,7 @@ Alias for `EuropaplusSDK.test()`.
 ## ScheduleEntity
 
 ```ts
-const schedule = client.schedule
+const schedule = client.Schedule()
 ```
 
 ### Fields
@@ -128,7 +128,7 @@ const schedule = client.schedule
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.schedule.list()
+const results = await client.Schedule().list()
 ```
 
 ### Common Methods

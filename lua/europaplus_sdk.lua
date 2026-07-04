@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:schedule():list() / client:schedule():load({ id = ... })
-function EuropaplusSDK:schedule(data)
+-- Idiomatic facade: client:Schedule():list() / client:Schedule():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function EuropaplusSDK:Schedule(data)
   local EntityMod = require("entity.schedule_entity")
   if data == nil then
     if self._schedule == nil then
@@ -253,12 +254,6 @@ function EuropaplusSDK:schedule(data)
     end
     return self._schedule
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:schedule() instead.
-function EuropaplusSDK:Schedule(data)
-  local EntityMod = require("entity.schedule_entity")
   return EntityMod.new(self, data)
 end
 

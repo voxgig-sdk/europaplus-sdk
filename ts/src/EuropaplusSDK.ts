@@ -204,14 +204,7 @@ class EuropaplusSDK {
 
 
 
-  _schedule?: ScheduleEntity
-
-  // Idiomatic facade: `client.schedule.list()` / `client.schedule.load({ id })`.
-  get schedule(): ScheduleEntity {
-    return (this._schedule ??= new ScheduleEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.schedule` instead. */
+  // Entity access: `client.Schedule().list()` / `client.Schedule().load({ id })`.
   Schedule(data?: any) {
     const self = this
     return new ScheduleEntity(self,data)

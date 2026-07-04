@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## ScheduleEntity
 
 ```lua
-local schedule = client:schedule(nil)
+local schedule = client:Schedule(nil)
 ```
 
 ### Fields
@@ -102,7 +102,7 @@ local schedule = client:schedule(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:schedule():list()
+local results, err = client:Schedule():list()
 ```
 
 ### Common Methods

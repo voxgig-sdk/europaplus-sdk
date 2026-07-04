@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## ScheduleEntity
 
 ```php
-$schedule = $client->schedule();
+$schedule = $client->Schedule();
 ```
 
 ### Fields
@@ -104,7 +104,7 @@ $schedule = $client->schedule();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->schedule()->list([]);
+$results = $client->Schedule()->list([]);
 ```
 
 ### Common Methods
