@@ -245,6 +245,9 @@ func (sdk *EuropaplusSDK) Direct(fetchargs map[string]any) (map[string]any, erro
 }
 
 
+// Schedule returns a Schedule entity bound to this client.
+// Idiomatic usage: client.Schedule(nil).List(nil, nil) or
+// client.Schedule(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *EuropaplusSDK) Schedule(data map[string]any) EuropaplusEntity {
 	return NewScheduleEntityFunc(sdk, data)
 }

@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:schedule():list() / client:schedule():load({ id = ... })
+function EuropaplusSDK:schedule(data)
+  local EntityMod = require("entity.schedule_entity")
+  if data == nil then
+    if self._schedule == nil then
+      self._schedule = EntityMod.new(self, nil)
+    end
+    return self._schedule
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:schedule() instead.
 function EuropaplusSDK:Schedule(data)
   local EntityMod = require("entity.schedule_entity")
   return EntityMod.new(self, data)

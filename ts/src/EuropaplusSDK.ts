@@ -2,6 +2,8 @@
 
 import { ScheduleEntity } from './entity/ScheduleEntity'
 
+export type * from './EuropaplusTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class EuropaplusSDK {
 
 
 
+  _schedule?: ScheduleEntity
+
+  // Idiomatic facade: `client.schedule.list()` / `client.schedule.load({ id })`.
+  get schedule(): ScheduleEntity {
+    return (this._schedule ??= new ScheduleEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.schedule` instead. */
   Schedule(data?: any) {
     const self = this
     return new ScheduleEntity(self,data)
