@@ -8,7 +8,7 @@ Complete API reference for the Europaplus Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'europaplus_sdk'
+require_relative 'Europaplus_sdk'
 
 client = EuropaplusSDK.new(options)
 ```
@@ -93,19 +93,19 @@ schedule = client.Schedule
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `host` | ``$STRING`` | No |  |
-| `program` | ``$STRING`` | No |  |
-| `time` | ``$STRING`` | No |  |
+| `description` | `String` | No |  |
+| `host` | `String` | No |  |
+| `program` | `String` | No |  |
+| `time` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Schedule.list(nil)
+results = client.Schedule.list
 ```
 
 ### Common Methods

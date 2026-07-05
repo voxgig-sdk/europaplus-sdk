@@ -29,7 +29,7 @@ Schedule = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Schedule#list (any subset of Schedule fields).
+# Request payload for Schedule#list.
 #
 # @!attribute [rw] description
 #   @return [String, nil]

@@ -13,6 +13,10 @@
 ---@field time? string
 
 ---@class ScheduleListMatch
+---@field description? string
+---@field host? string
+---@field program? string
+---@field time? string
 
 local M = {}
 

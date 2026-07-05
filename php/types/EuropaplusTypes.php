@@ -21,7 +21,7 @@ class Schedule
     public ?string $time = null;
 }
 
-/** Match filter for Schedule#list (any subset of Schedule fields). */
+/** Request payload for Schedule#list. */
 class ScheduleListMatch
 {
     public ?string $description = null;

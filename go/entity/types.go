@@ -16,8 +16,7 @@ type Schedule struct {
 	Time *string `json:"time,omitempty"`
 }
 
-// ScheduleListMatch mirrors the schedule fields as an all-optional match
-// filter (Go analog of Partial<Schedule>).
+// ScheduleListMatch is the typed request payload for Schedule.ListTyped.
 type ScheduleListMatch struct {
 	Description *string `json:"description,omitempty"`
 	Host *string `json:"host,omitempty"`

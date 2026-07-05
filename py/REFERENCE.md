@@ -87,19 +87,19 @@ schedule = client.Schedule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `host` | ``$STRING`` | No |  |
-| `program` | ``$STRING`` | No |  |
-| `time` | ``$STRING`` | No |  |
+| `description` | `str` | No |  |
+| `host` | `str` | No |  |
+| `program` | `str` | No |  |
+| `time` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Schedule().list({})
+results = client.Schedule().list()
 for schedule in results:
     print(schedule)
 ```

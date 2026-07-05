@@ -221,7 +221,7 @@ class EuropaplusSDK:
 
 
     def Schedule(self, data=None) -> "ScheduleEntity":
-        """Entity factory: client.Schedule().list({}) / client.Schedule().load({"id": ...})."""
+        """Entity factory: client.Schedule().list() / client.Schedule().load({"id": ...})."""
         from entity.schedule_entity import ScheduleEntity
         return ScheduleEntity(self, data)
 

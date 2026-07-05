@@ -97,10 +97,10 @@ schedule := client.Schedule(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `host` | ``$STRING`` | No |  |
-| `program` | ``$STRING`` | No |  |
-| `time` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `host` | `string` | No |  |
+| `program` | `string` | No |  |
+| `time` | `string` | No |  |
 
 ### Operations
 

@@ -12,5 +12,10 @@ export interface Schedule {
   time?: string
 }
 
-export type ScheduleListMatch = Partial<Schedule>
+export interface ScheduleListMatch {
+  description?: string
+  host?: string
+  program?: string
+  time?: string
+}
 
