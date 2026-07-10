@@ -15,9 +15,9 @@ main: {
           url: "https://www.europaplus.ru"
         }
       ]
+      summary: "The Europaplus API is a JavaScript library designed to interact with the Europaplus radio service in Russia."
       title: "Europaplus API"
       version: "1.0.0"
+      website: "https://github.com/l0v3m0n3y/europaplus"
     }
   }
-}
-
