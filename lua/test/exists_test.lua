@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Europaplus SDK exists test
 
 local sdk = require("europaplus_sdk")
 
