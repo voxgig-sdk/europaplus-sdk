@@ -63,6 +63,7 @@ module EuropaplusConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/schedule",
                   "parts" => [

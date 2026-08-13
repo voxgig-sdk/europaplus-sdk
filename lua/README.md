@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local schedule, err = client:Schedule():load()
+    local schedule, err = client:Schedule():list()
     if err then error(err) end
-    -- schedule is the loaded record
+    -- schedule is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from europaplus_sdk.utility.voxgig_struct import voxgig_struct as vs
 from europaplus_sdk import EuropaplusSDK
-from core import helpers
+from europaplus_sdk.core import helpers
 from test import runner
 
 

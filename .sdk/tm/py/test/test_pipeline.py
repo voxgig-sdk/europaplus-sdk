@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import EuropaplusSDK
-from core.error import EuropaplusError
-from core.result import EuropaplusResult
-from core.response import EuropaplusResponse
-from core.spec import EuropaplusSpec
-from feature.base_feature import EuropaplusBaseFeature
+from projectname_sdk.core.error import EuropaplusError
+from projectname_sdk.core.result import EuropaplusResult
+from projectname_sdk.core.response import EuropaplusResponse
+from projectname_sdk.core.spec import EuropaplusSpec
+from projectname_sdk.feature.base_feature import EuropaplusBaseFeature
 
 
 def _client():

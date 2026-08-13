@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Europaplus SDK exists test
 
 import pytest
 from europaplus_sdk import EuropaplusSDK

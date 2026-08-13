@@ -35,7 +35,9 @@ const client = new EuropaplusSDK()
 
 ### 2. List schedule records
 
-`list()` resolves to an array of Schedule objects — iterate it directly:
+`list()` resolves to an array of Schedule ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const schedules = await client.Schedule().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = EuropaplusSDK.test()
 
 const schedule = await client.Schedule().list()
-// schedule is a bare entity populated with mock response data
+// schedule is the entity, populated with mock response data
+// — call schedule.data() for the record itself
 console.log(schedule)
 ```
 

@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ EuropaplusUtility::setRegistrar(function (EuropaplusUtility $u): void {
     $u->prepare_params = [EuropaplusPrepareParams::class, 'call'];
     $u->prepare_path = [EuropaplusPreparePath::class, 'call'];
     $u->prepare_query = [EuropaplusPrepareQuery::class, 'call'];
+    $u->graphql_body = [EuropaplusGraphql::class, 'body'];
+    $u->graphql_errors = [EuropaplusGraphql::class, 'errors'];
     $u->result_basic = [EuropaplusResultBasic::class, 'call'];
     $u->result_body = [EuropaplusResultBody::class, 'call'];
     $u->result_headers = [EuropaplusResultHeaders::class, 'call'];
