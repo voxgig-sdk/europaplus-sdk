@@ -40,7 +40,7 @@ class EuropaplusSDK
         $utility = new EuropaplusUtility();
         $this->_utility = $utility;
 
-        $config = EuropaplusConfig::make_config();
+        $config = EuropaplusConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

@@ -28,7 +28,7 @@ class EuropaplusSDK
     utility = EuropaplusUtility.new
     @_utility = utility
 
-    config = EuropaplusConfig.make_config
+    config = EuropaplusConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

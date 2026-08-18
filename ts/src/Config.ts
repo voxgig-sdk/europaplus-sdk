@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://www.europaplus.ru',
+    base: "https://www.europaplus.ru",
 
     headers: {
       "content-type": "application/json"
@@ -55,32 +55,20 @@ class Config {
     "schedule": {
       "fields": [
         {
-          "active": true,
           "name": "description",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "host",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "program",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "time",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         }
       ],
       "name": "schedule",
@@ -90,7 +78,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "GET",
@@ -102,11 +89,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.schedule`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "list"
+          ]
         }
       },
       "relations": {

@@ -15,7 +15,7 @@ require_relative "../Europaplus_sdk"
 module EuropaplusFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = EuropaplusConfig.make_config["feature"]
+    f = EuropaplusConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 
