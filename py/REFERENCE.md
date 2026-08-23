@@ -87,10 +87,10 @@ schedule = client.Schedule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `str` | No |  |
-| `host` | `str` | No |  |
-| `program` | `str` | No |  |
-| `time` | `str` | No |  |
+| `description` | `str` | No | Program description |
+| `host` | `str` | No | Host or DJ name |
+| `program` | `str` | No | Name of the program |
+| `time` | `str` | No | Time of the scheduled program |
 
 ### Operations
 

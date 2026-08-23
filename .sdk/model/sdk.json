@@ -36,24 +36,28 @@
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Program description",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "host",
               "req": false,
+              "short": "Host or DJ name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "program",
               "req": false,
+              "short": "Name of the program",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "time",
               "req": false,
+              "short": "Time of the scheduled program",
               "type": "`$STRING`"
             }
           ],

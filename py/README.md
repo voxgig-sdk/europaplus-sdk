@@ -243,10 +243,10 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `host` |  |
-| `program` |  |
-| `time` |  |
+| `description` | Program description |
+| `host` | Host or DJ name |
+| `program` | Name of the program |
+| `time` | Time of the scheduled program |
 
 Operations: List.
 
@@ -271,10 +271,10 @@ Create an instance: `schedule = client.Schedule()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `str` |  |
-| `host` | `str` |  |
-| `program` | `str` |  |
-| `time` | `str` |  |
+| `description` | `str` | Program description |
+| `host` | `str` | Host or DJ name |
+| `program` | `str` | Name of the program |
+| `time` | `str` | Time of the scheduled program |
 
 #### Example: List
 

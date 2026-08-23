@@ -231,10 +231,10 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `host` |  |
-| `program` |  |
-| `time` |  |
+| `description` | Program description |
+| `host` | Host or DJ name |
+| `program` | Name of the program |
+| `time` | Time of the scheduled program |
 
 Operations: List.
 
@@ -259,10 +259,10 @@ Create an instance: `local schedule = client:Schedule(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `host` | `string` |  |
-| `program` | `string` |  |
-| `time` | `string` |  |
+| `description` | `string` | Program description |
+| `host` | `string` | Host or DJ name |
+| `program` | `string` | Name of the program |
+| `time` | `string` | Time of the scheduled program |
 
 #### Example: List
 

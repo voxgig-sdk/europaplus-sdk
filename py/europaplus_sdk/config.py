@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "Europaplus",
+            "slug": "europaplus",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -50,18 +53,22 @@ def make_config():
         "fields": [
           {
             "name": "description",
+            "short": "Program description",
             "type": "`$STRING`",
           },
           {
             "name": "host",
+            "short": "Host or DJ name",
             "type": "`$STRING`",
           },
           {
             "name": "program",
+            "short": "Name of the program",
             "type": "`$STRING`",
           },
           {
             "name": "time",
+            "short": "Time of the scheduled program",
             "type": "`$STRING`",
           },
         ],

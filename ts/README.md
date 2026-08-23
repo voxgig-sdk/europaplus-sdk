@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,10 +287,10 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `host` |  |
-| `program` |  |
-| `time` |  |
+| `description` | Program description |
+| `host` | Host or DJ name |
+| `program` | Name of the program |
+| `time` | Time of the scheduled program |
 
 Operations: list.
 
@@ -315,10 +315,10 @@ Create an instance: `const schedule = client.Schedule()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `host` | `string` |  |
-| `program` | `string` |  |
-| `time` | `string` |  |
+| `description` | `string` | Program description |
+| `host` | `string` | Host or DJ name |
+| `program` | `string` | Name of the program |
+| `time` | `string` | Time of the scheduled program |
 
 #### Example: List
 

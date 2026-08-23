@@ -90,10 +90,10 @@ local schedule = client:Schedule(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `host` | `string` | No |  |
-| `program` | `string` | No |  |
-| `time` | `string` | No |  |
+| `description` | `string` | No | Program description |
+| `host` | `string` | No | Host or DJ name |
+| `program` | `string` | No | Name of the program |
+| `time` | `string` | No | Time of the scheduled program |
 
 ### Operations
 

@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'Europaplus',
+        slug: "europaplus",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,18 +67,22 @@ class Config {
       "fields": [
         {
           "name": "description",
+          "short": "Program description",
           "type": "`$STRING`"
         },
         {
           "name": "host",
+          "short": "Host or DJ name",
           "type": "`$STRING`"
         },
         {
           "name": "program",
+          "short": "Name of the program",
           "type": "`$STRING`"
         },
         {
           "name": "time",
+          "short": "Time of the scheduled program",
           "type": "`$STRING`"
         }
       ],

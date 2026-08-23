@@ -237,10 +237,10 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `host` |  |
-| `program` |  |
-| `time` |  |
+| `description` | Program description |
+| `host` | Host or DJ name |
+| `program` | Name of the program |
+| `time` | Time of the scheduled program |
 
 Operations: List.
 
@@ -265,10 +265,10 @@ Create an instance: `schedule = client.Schedule`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `String` |  |
-| `host` | `String` |  |
-| `program` | `String` |  |
-| `time` | `String` |  |
+| `description` | `String` | Program description |
+| `host` | `String` | Host or DJ name |
+| `program` | `String` | Name of the program |
+| `time` | `String` | Time of the scheduled program |
 
 #### Example: List
 

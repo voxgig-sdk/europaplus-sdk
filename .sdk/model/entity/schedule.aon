@@ -8,21 +8,25 @@ main: kit: entity: schedule: {
     {
       name: "description"
       req: false
+      short: "Program description"
       type: "`$STRING`"
     }
     {
       name: "host"
       req: false
+      short: "Host or DJ name"
       type: "`$STRING`"
     }
     {
       name: "program"
       req: false
+      short: "Name of the program"
       type: "`$STRING`"
     }
     {
       name: "time"
       req: false
+      short: "Time of the scheduled program"
       type: "`$STRING`"
     }
   ]
