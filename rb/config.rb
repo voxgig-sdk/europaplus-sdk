@@ -75,14 +75,19 @@ module EuropaplusConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/schedule",
-                  "parts" => [
-                    "schedule",
+                  "segments" => [
+                    {
+                      "lit" => "schedule",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body.schedule`",
                   },
+                  "parts" => [
+                    "schedule",
+                  ],
                 },
               ],
             },

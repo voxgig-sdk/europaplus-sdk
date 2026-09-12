@@ -39,8 +39,10 @@ main: kit: entity: schedule: {
         {
           method: "GET"
           orig: "/schedule"
-          parts: [
-            "schedule"
+          segments: [
+            {
+              lit: "schedule"
+            }
           ]
           transform: {
             req: "`reqdata`"
