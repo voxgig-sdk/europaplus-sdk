@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { EuropaplusSDK } from '@voxgig-sdk/europaplus'
+import { EuropaplusSDK } from '@voxgig-sdk/europaplus-sdk'
 
 const client = new EuropaplusSDK()
 ```
@@ -409,7 +409,7 @@ europaplus/
 Import the SDK from the package root:
 
 ```ts
-import { EuropaplusSDK } from '@voxgig-sdk/europaplus'
+import { EuropaplusSDK } from '@voxgig-sdk/europaplus-sdk'
 ```
 
 ### Entity state

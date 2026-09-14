@@ -105,7 +105,7 @@ local results, err = client:Schedule():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/europaplus` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/releases) |
+| TypeScript | `@voxgig-sdk/europaplus-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/releases) |
 | Python | `voxgig-sdk-europaplus` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/releases) |
 | PHP | `voxgig-sdk/europaplus` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/europaplus-sdk/go` | `go get github.com/voxgig-sdk/europaplus-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Schedule():list()
 ### TypeScript
 
 ```ts
-import { EuropaplusSDK } from '@voxgig-sdk/europaplus'
+import { EuropaplusSDK } from '@voxgig-sdk/europaplus-sdk'
 
 const client = new EuropaplusSDK()
 
