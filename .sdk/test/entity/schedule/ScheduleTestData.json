@@ -30,5 +30,94 @@
         "time": "sa3"
       }
     }
+  },
+  "requests": {
+    "GET /schedule": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getSchedule",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "schedule": {
+                      "items": {
+                        "properties": {
+                          "description": {
+                            "description": "Program description",
+                            "type": "string"
+                          },
+                          "host": {
+                            "description": "Host or DJ name",
+                            "type": "string"
+                          },
+                          "program": {
+                            "description": "Name of the program",
+                            "type": "string"
+                          },
+                          "time": {
+                            "description": "Time of the scheduled program",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response containing schedule data"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "description": "Error code",
+                      "type": "integer"
+                    },
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "description": "Error code",
+                      "type": "integer"
+                    },
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

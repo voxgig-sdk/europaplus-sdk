@@ -1,12 +1,18 @@
 # Europaplus SDK feature factory
 
 from europaplus_sdk.feature.base_feature import EuropaplusBaseFeature
+from europaplus_sdk.feature.ratelimit_feature import EuropaplusRatelimitFeature
+from europaplus_sdk.feature.retry_feature import EuropaplusRetryFeature
 from europaplus_sdk.feature.test_feature import EuropaplusTestFeature
+from europaplus_sdk.feature.timeout_feature import EuropaplusTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: EuropaplusBaseFeature(),
+    "ratelimit": lambda: EuropaplusRatelimitFeature(),
+    "retry": lambda: EuropaplusRetryFeature(),
     "test": lambda: EuropaplusTestFeature(),
+    "timeout": lambda: EuropaplusTimeoutFeature(),
 }
 
 
