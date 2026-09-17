@@ -105,12 +105,12 @@ local results, err = client:Schedule():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/europaplus-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/releases) |
-| Python | `voxgig-sdk-europaplus` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/releases) |
-| PHP | `voxgig-sdk/europaplus` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/releases) |
+| TypeScript | `@voxgig-sdk/europaplus-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/tags) |
+| Python | `voxgig-sdk-europaplus` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/tags) |
+| PHP | `voxgig-sdk/europaplus` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/europaplus-sdk/go` | `go get github.com/voxgig-sdk/europaplus-sdk/go@latest` |
-| Ruby | `voxgig-sdk-europaplus` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/releases) |
-| Lua | `voxgig-sdk-europaplus` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/releases) |
+| Ruby | `voxgig-sdk-europaplus` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/tags) |
+| Lua | `voxgig-sdk-europaplus` | publish pending — [install from git tag](https://github.com/voxgig-sdk/europaplus-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/europaplus-sdk/go-cli` | `go install github.com/voxgig-sdk/europaplus-sdk/go-cli/cmd/europaplus@latest` |
 | Go MCP server | `github.com/voxgig-sdk/europaplus-sdk/go-mcp` | `go get github.com/voxgig-sdk/europaplus-sdk/go-mcp@latest` |
 
